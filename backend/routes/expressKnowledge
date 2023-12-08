@@ -1,0 +1,33 @@
+--(Lesson 1 middleware & request and response):-
+
+in express to handle routes effectively, you need a middleware to have a request, response and a next, you can handle requests without middleware, but middlewar greatly helps the prpcess of handliging requests.
+
+middleware needs 3 parameters (req, res, next)
+req = request = what is coming from client side
+res = response = what is coming from server side
+next = you need to to make sure the middleware goes to the next route, without the "next" parameter, the middleware will not go to the next route and hence your routes wont even work.
+
+example : app.use((req, res, next) => {
+console.log(req.path, req.method);
+next();
+});
+
+--(Lesson 2 routing parameters):------
+
+dynamic routing is a way to do this.
+
+"/profile/harsh" is an example route, but this si static and no one one wants to put names in by hand every time, this will take forever for each user.
+
+so you use something like: /profile/:username, this ":" is used as a parameter in this situation and it means that anything can be put there. so whatever you put after /profile/{} will be used as a username. btw ":username" is also called as params in javascript, too access this value of usename in dynamic programming, you can use req.params.username to get the value of the username
+
+--(Lesson 3 template engines):-----------
+
+Alreday understood, summary = esj is a template engine.
+
+---(Lesson 4 Static files):--------------
+
+crete a folder called "public" in the main backend root file. and within that public folder create files suhc as images, stylesheets, javascripts. then configure these files within your sciprt.js file, or whatever your main express.js file is.
+
+then you can configure it using app.use(express.static{path of the file for example: "./public"})
+
+--schemas and how to set them up --

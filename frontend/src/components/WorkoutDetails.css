@@ -1,0 +1,17 @@
+.workout-details .deleteBtn {
+ color: black;
+ background-color: white;
+ text-align: center;
+ vertical-align: center;
+ border-radius: 20px;
+ margin-left: 90%;
+ border: none;
+ outline: none;
+}
+
+.workout-details .deleteBtn :hover {
+    scale: 1.1;
+    transition: 0.1s;
+    cursor: pointer;
+    color: red;
+}
